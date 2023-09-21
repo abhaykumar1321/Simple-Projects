@@ -1,0 +1,32 @@
+#wrapped {
+  text-align: center;
+}
+
+h1 {
+  background: yellow;
+  width: 50%;
+  /* text-align: center; */
+  margin: 0 auto;
+}
+
+.result {
+  text-align: center;
+  border: 1px solid black;
+  width: 100px;
+  margin: 10px auto;
+}
+
+input[type="submit"] {
+  margin-top: 20px;
+  height: 30px;
+  width: 100px;
+  background-color: aqua;
+  font-size: large;
+  font-style: oblique;
+  border: none;
+  border-radius: 20px;
+}
+
+.submitted {
+  display: inline;
+}
