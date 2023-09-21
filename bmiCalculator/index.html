@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Calculate your Body Mass Index</h1>
+    <form>
+      <label for="height">Enter Your Height (cm) :</label>
+      <input type="text" id="height" />
+      <br />
+      <label for="weight">Enter Your Weight (kg):</label>
+      <input type="text" id="weight" />
+      <br />
+      <button type="submit">Calculate</button>
+
+      <div class="result"></div>
+
+      <div class="calculate"></div>
+
+      <div class="details">
+        <h2>BMI Details</h2>
+        <p>Under Weight = Less than 20</p>
+        <p>Normal Weight = 20 to 40</p>
+        <p>Over Weight = Over 40</p>
+      </div>
+    </form>
+    <script src="app.js"></script>
+  </body>
+</html>

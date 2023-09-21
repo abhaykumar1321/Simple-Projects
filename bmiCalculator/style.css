@@ -1,0 +1,39 @@
+body {
+  background-color: #ad9cff;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+
+input {
+  margin: 20px;
+}
+
+button {
+  margin-top: 20px;
+  color: rgb(245, 231, 245);
+  background-color: #b40202;
+  border-radius: 20px;
+}
+
+.result {
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.calculate {
+  font-weight: 500;
+}
+
+.details {
+  border: 2px solid black;
+  width: 230px;
+  text-align: center;
+  margin: 40px auto;
+  font-style: italic;
+}
