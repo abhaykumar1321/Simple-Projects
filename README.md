@@ -4,7 +4,7 @@
 
 [Click Here](www.google.com)
 
-# Solution Code
+# Project 1 - Background Changer
 
 ```Javascript
 const allbuttons = document.querySelectorAll(".button");
@@ -58,7 +58,7 @@ allbuttons.forEach(function (buttons) {
 
 ```
 
-#Project 2 BMI Calculator
+# Project 2 - BMI Calculator
 
 ```Javascript
 
@@ -90,5 +90,18 @@ formValue.addEventListener("submit", function (event) {
   }
 });
 
+
+```
+
+# Project 3 - Digital Clock
+
+```Javascript
+
+const newTime = document.getElementById("time");
+
+setInterval(function () {
+  let actualTime = new Date();
+  newTime.innerHTML = actualTime.toLocaleTimeString();
+}, 1000);
 
 ```
