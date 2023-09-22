@@ -1,4 +1,4 @@
-const randomNumber = parseInt(Math.random() * 100 + 1);
+let randomNumber = parseInt(Math.random() * 100 + 1);
 
 const userInputNumber = document.querySelector("#guessfield");
 const submitButton = document.querySelector("#submitted");
@@ -36,7 +36,7 @@ function guessValidation(guess) {
     prevGuess.push(guess);
     if (numGuess === 11) {
       displayGuess(guess);
-      displayMessage(`Game Over, Random Numbre was ${randomNumber}`);
+      displayMessage(`Game Over!, Random Number was ${randomNumber}`);
       endGame();
     } else {
       displayGuess(guess);
@@ -76,4 +76,16 @@ function endGame() {
   newGame();
 }
 
-function newGame() {}
+function newGame() {
+  const newGameButton = document.querySelector("#newGame");
+  newGameButton.addEventListener("click", function (e) {
+    randomNumber = parseInt(Math.random() * 100 + 1);
+    prevGuess = [];
+    numGuess = 1;
+    previousGuess.innerHTML = "";
+    remainingGuess.innerHTML = `${11 - numGuess}`;
+    userInputNumber.removeAttribute("disabled");
+    startOver.removeChild("p");
+    playGame = true;
+  });
+}
