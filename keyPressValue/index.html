@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyboard Check</title>
+    <style>
+      body {
+        background-color: #212121;
+      }
+      .project {
+        margin-top: 45vh;
+        text-align: center;
+        color: white;
+        font-family: cursive;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="project">
+      <div id="insert">
+        <div class="key">Type Anything!</div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const insertReference = document.querySelector("#insert");
+    window.addEventListener("keydown", (e) => {
+      insertReference.innerHTML = `
+            <div class='color'>
+                <table>
+      <tr>
+        <th>Key</th>
+        <th>KeyCode</th>
+        <th>Code</th>
+      </tr>
+      <tr>
+        <td>${e.key === "" ? "Space" : e.key}</td>
+        <td>${e.keyCode}</td>
+        <td>${e.code}</td>
+      </tr>
+    </table>
+                </div>`;
+    });
+  </script>
+</html>
