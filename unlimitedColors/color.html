@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unlimited Colors</title>
+    <style>
+      div {
+        text-align: center;
+        font-family: cursive;
+        height: 50vh;
+        margin-top: 40vh;
+      }
+
+      #start {
+        font-size: 20px;
+        font-weight: 700;
+        height: 52px;
+        width: 90px;
+        padding: 10px;
+        border: none;
+        font-family: cursive;
+        border-radius: 5px;
+      }
+      #stop {
+        font-size: 20px;
+        font-weight: 700;
+        height: 52px;
+        width: 90px;
+        padding: 10px;
+        border: none;
+        font-family: cursive;
+        border-radius: 5px;
+      }
+
+      #start:hover {
+        background-color: rgb(16, 186, 0);
+        transition: 0.5s ease-in-out;
+      }
+      #stop:hover {
+        background-color: rgb(219, 32, 32);
+        transition: 0.5s ease-in-out;
+      }
+
+      .currentColor {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>This website is changing it's background color!</h1>
+      <h1 class="currentColor"></h1>
+      <button id="start">Start</button>
+      <button id="stop">Stop</button>
+    </div>
+  </body>
+  <script>
+    //To change bg color every two 2 seconds first
+    //the range has to be in hex #000000 which has 6 characters from
+    // A-F ,0-9
+    //generate a random color
+
+    const randomColorGenerator = function () {
+      const hexValue = "0123456789ABCDEF";
+      let color = "#";
+      for (let i = 0; i < 6; i++) {
+        color += hexValue[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    };
+    let intervalId;
+    const startChangingColor = function () {
+      if (!intervalId) {
+        intervalId = setInterval(changeBGcolor, 1000);
+      }
+
+      function changeBGcolor() {
+        document.querySelector("body").style.backgroundColor =
+          randomColorGenerator();
+
+        document.querySelector(
+          ".currentColor"
+        ).innerHTML = `Current Color : ${randomColorGenerator()}`;
+      }
+    };
+
+    document
+      .querySelector("#start")
+      .addEventListener("click", startChangingColor);
+    //console.log(randomColorGenerator());
+
+    const stopChangingColor = function () {
+      clearInterval(intervalId);
+      intervalId = null;
+    };
+
+    document
+      .querySelector("#stop")
+      .addEventListener("click", stopChangingColor);
+  </script>
+</html>
